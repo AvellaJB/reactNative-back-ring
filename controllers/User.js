@@ -89,9 +89,9 @@ function getUserBooks(req, res) {
 }
 
 async function loginUser(req, res) {
-  const { pseudo, mail, password } = req.body;
+  const { mail, password } = req.body;
 
-  if (!mail || !password || !pseudo) return res.sendStatus(400);
+  if (!mail || !password) return res.sendStatus(400);
 
   const user = await userModel.findOne({ mail });
 
